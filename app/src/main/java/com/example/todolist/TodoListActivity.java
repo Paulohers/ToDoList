@@ -51,8 +51,15 @@ public class TodoListActivity extends AppCompatActivity {
         db.close();
         updateGUI();
     }
-
+    /**
+     * Este método tiene como objetivo refrescar el layout donde se mostrará la lista.
+     * */
     public void updateGUI(){
+        /**
+         * @param taskList es una variable de tipo ArrayList. Tiene como función guardar datos dentro de la lista, datos de tipo string.
+         * @param taskList2 es una variable de tipo ArrayList. Tiene como función guardar datos dentro de la lista, datos de tipo string.
+         * @param db es un varaible instanciada a un objeto de tipo SQLiteDatabase, es una variable con la función de llamar metodos para ejecutar en la BD.
+         * */
         ArrayList<String> taskList = new ArrayList<>();
         ArrayList<String> taskList2 = new ArrayList<>();
         SQLiteDatabase db = mHelper.getReadableDatabase();
@@ -86,6 +93,10 @@ public class TodoListActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Método en el cual se recibe un parametro el cual esta relacionado directamente con la lista de despliegue de opciones.
+     * @param item este parámetro tiene como objetivo recibir el id para la selección de opción.
+     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
@@ -107,7 +118,11 @@ public class TodoListActivity extends AppCompatActivity {
 
 
     }
-
+    /**
+     * Este método tiene como objetivo recibir el contenido de la tarea que se agregara en la lista, como el contenido de texto y el checkbox.
+     * @param  requestCode este parámetro tiene como funcion recibir un código para devolver un tipo de código, dependiendo de este resultado se ejecutara un acción.
+     * @param  resultCode este parámetro tiene como objetivo reciibir un tipo de resultado del codigo que tenga el parametro "requestCode".
+      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

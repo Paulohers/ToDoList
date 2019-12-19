@@ -10,6 +10,9 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         super(context, TaskContract.DB_NAME, null, TaskContract.DB_VERSION);
     }
 
+    /**
+     * Este método tiene como objetivo recibir un parámetro para acceder a la base de datos y ejecutar un query.
+     * @param  db este parametro tiene como objetivo para ejecutar metodos o el query dentro en la BD.*/
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TaskContract.TaskEntry.TABLE + " ( " +
@@ -20,6 +23,11 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         db.execSQL(createTable);
     }
 
+    /**
+     * Este método tiene como objetivo borrar la tabla si llega  a existir en el contexto.
+     * @param db este parámetro tiene como función acceder a los metodos de la BD, y recibir la tabla.
+     * @param oldVersion este parámetro tiene como función manejar la versión de la BD.
+     * @param newVersion  este parámetro tiene como función manejar la version mas nueva de la BD, para comparar con las otras versiones.*/
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TaskContract.TaskEntry.TABLE);
