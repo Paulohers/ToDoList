@@ -1,0 +1,16 @@
+<resources>
+    <string name="login">Login</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="enter_your_password">Enter your password</string>
+
+    <string name="this_field_is_required">This field is required!</string>
+    <string name="action_new">action_new</string>
+    <string name="action_refresh">action_refresh</string>
+    <string name="action_logout">action_logout</string>
+    <string name="app_name">To-do List</string>
+    <string name="what_needs">what needs to be done</string>
+    <string name="Done">Done</string>
+    <string name="add_todo">Add Todo</string>
+    <string name="action_settings">actions_settings</string>
+
+</resources>
